@@ -1,0 +1,69 @@
+<section class="drawer cart_container" id="drawer-name" data-drawer-target>
+  <div class="drawer__overlay" data-drawer-close tabindex="-1"></div>
+  <div class="drawer__wrapper cart_content">
+    <div class="drawer__header">
+      <div class="drawer__title">
+        Your cart
+      </div>
+      <button class="drawer__close" data-drawer-close aria-label="Close Drawer"></button>
+    </div>
+    <div class="drawer__content" id="cart__drawer">
+      <div id="drawer_cart_items">
+        <div class="js-empty-cart__message cart-empty ">
+          <div class="empty-cart">
+            <h3>Oh No!</h3>
+            <h2 class="u-text-fancy">your bag is empty.</h2>
+            <a href="#" class="js-cart-close button border-wide">
+              Keep Shopping
+            </a>
+          </div>
+        </div>
+                  
+        <form action="/checkout" method="post" data-money-format="<span class=money>Rs. {{amount_no_decimals}}</span>" data-shop-currency="{{ shop.currency }}" data-shop-name="{{ shop.name }}" class="js-cart_content__form hidden">
+          <div class="Drawer__main">
+            <ul class="cart_items test js-cart_items clearfix">
+              <li></li>
+            </ul>
+          </div>
+          <ul class="cart_footer">
+            <div class="sub_totl">
+              <li class="cart_subtotal js-cart_subtotal">
+                <span class="right">
+                  <span class="money"><span class=money>Rs. 0</span></span>
+                </span>
+                <span>Subtotal</span>
+              </li>
+              <li>
+                <div class="cart_checkout-btn">
+                  <button type="submit" class="cart__checkout-btn button" name="checkout">
+                    Check out
+                  </button>
+                </div>
+              </li>
+            </div>
+            
+          </ul>
+        </form>
+      </div>
+
+      <!-- <div style="margin-top: 50px">
+        <h4>Total: <span id="drawer_total_amount"></span></h4>
+        <a id="drawer_checkout_btn" href="/checkout" class="btn btn--has-icon-after cart__continue-btn" style="width:100%;">Proceed Checkout</a>
+      </div> -->
+    </div>
+  </div>
+</section>
+
+
+{% schema %}
+  {
+    "name": "Mindtree cart drawer",
+    "settings": []
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
